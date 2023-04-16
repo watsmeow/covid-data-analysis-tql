@@ -136,7 +136,7 @@ Select
 	(total_population_vaccinated/population)*100
 from total_pop_vs_total_vaxxed
 
---Tempt table
+--Temp table
 Create  Table #PercentPopulationVaccinated
 (
 continent nvarchar(255),
@@ -161,5 +161,18 @@ Where cds.continent != '' and cvs.new_vaccinations != 0
 
 Select 
 	*, 
-	(total_population_vaccinated/population)*100
+	(total_population_vaccinated/population)*100 as percentage_pop_vaxxed
 from #PercentPopulationVaccinated
+
+--View for visualizations
+Create view PercentPopulationVaccinated as 
+Select cds.continent, 
+	cds.location, cds.date, 
+	cds.population, 
+	cvs.new_vaccinations,
+	SUM(cvs.new_vaccinations) 
+	OVER (Partition by cds.location Order by cds.location, cds.date) as total_population_vaccinated
+From PortfolioProject..CovidDeaths cds
+Join PortfolioProject..CovidVaccinations cvs
+	On cds.location = cvs.location
+	and cds.date = cvs.date
