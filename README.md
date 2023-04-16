@@ -1,4 +1,4 @@
-# covid-data-analysis-tql
+# covid-data-analysis-tsql
 Using SQL to analyze publicly available data on covid infections, vaccinations, and deaths. 
 
 **Link to vizt:** https://public.tableau.com/app/profile/andrea2938/viz/CovidDataVisualization_16816653893880/Dash
