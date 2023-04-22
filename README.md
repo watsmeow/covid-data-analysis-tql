@@ -7,4 +7,4 @@ Using SQL to analyze publicly available data on covid infections, vaccinations, 
 
 **Tech used:** TSQL for analysis, Tableau for dashboard
 
-![image](https://user-images.githubusercontent.com/99840213/232337149-cfa537fa-8925-4da5-9792-91aa763661f4.png)
+![Dash](https://user-images.githubusercontent.com/99840213/233793982-6500d8c6-d3dd-4bbf-8937-cb546e9cb5d3.png)
